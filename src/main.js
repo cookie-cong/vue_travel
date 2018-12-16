@@ -3,6 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import 'styles/reset.css'
+import 'styles/border.css'//解决一像素边框的方案
+// import fastclick from 'fastclick'
 
 Vue.config.productionTip = false
 
