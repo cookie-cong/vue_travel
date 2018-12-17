@@ -6,9 +6,12 @@ import router from './router'
 import 'styles/reset.css'
 import 'styles/border.css'//解决一像素边框的方案
 // import fastclick from 'fastclick'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import '../dist/css/swiper.css'
+import '../dist/js/swiper'
 
 Vue.config.productionTip = false
-
+Vue.use(VueAwesomeSwiper)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
