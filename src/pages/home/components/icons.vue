@@ -117,12 +117,7 @@ export default {
                     id:"08",
                     imgUrl:"//s.qunarzz.com/vacation_react/freetrip/jijiu.png",
                     desc:"热门景点"
-                },
-                {
-                    id:"09",
-                    imgUrl:"//s.qunarzz.com/vacation_react/freetrip/jijiu.png",
-                    desc:"热门景点"
-                }                      
+                }                     
 
             ]
         }
