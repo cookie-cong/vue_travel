@@ -20,34 +20,37 @@
 <script>
 export default {
     name:"HomeRecommend",
+    props:{
+        RecommendList:Array
+    },
     data(){
         return{
-            RecommendList:[
-                {
-                    id:"01",
-                    imgUrl:"https://fuss10.elemecdn.com/7/f4/809def0555a227207c4b40ece86c7jpeg.jpeg?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
-                    title:"肯德基宅急送（西站北广场店)",
-                    desc:"月售492单"
-                },
-                 {
-                    id:"02",
-                    imgUrl:"https://fuss10.elemecdn.com/6/99/f7632ddf340c264b30a73acadd328jpeg.jpeg?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
-                    title:"肯德基宅急送（西站北广场店)",
-                    desc:"月售492单"
-                },
-                 {
-                    id:"03",
-                    imgUrl:"https://fuss10.elemecdn.com/d/f3/bce356cf494e152bee383d977aaafpng.png?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
-                    title:"肯德基宅急送（西站北广场店)",
-                    desc:"月售492单"
-                },
-                 {
-                    id:"04",
-                    imgUrl:"https://fuss10.elemecdn.com/7/f4/809def0555a227207c4b40ece86c7jpeg.jpeg?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
-                    title:"肯德基宅急送（西站北广场店)",
-                    desc:"月售492单"
-                }
-            ]
+            // RecommendList:[
+            //     {
+            //         id:"01",
+            //         imgUrl:"https://fuss10.elemecdn.com/7/f4/809def0555a227207c4b40ece86c7jpeg.jpeg?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
+            //         title:"肯德基宅急送（西站北广场店)",
+            //         desc:"月售492单"
+            //     },
+            //      {
+            //         id:"02",
+            //         imgUrl:"https://fuss10.elemecdn.com/6/99/f7632ddf340c264b30a73acadd328jpeg.jpeg?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
+            //         title:"肯德基宅急送（西站北广场店)",
+            //         desc:"月售492单"
+            //     },
+            //      {
+            //         id:"03",
+            //         imgUrl:"https://fuss10.elemecdn.com/d/f3/bce356cf494e152bee383d977aaafpng.png?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
+            //         title:"肯德基宅急送（西站北广场店)",
+            //         desc:"月售492单"
+            //     },
+            //      {
+            //         id:"04",
+            //         imgUrl:"https://fuss10.elemecdn.com/7/f4/809def0555a227207c4b40ece86c7jpeg.jpeg?imageMogr/format/webp/thumbnail/!130x130r/gravity/Center/crop/130x130/",
+            //         title:"肯德基宅急送（西站北广场店)",
+            //         desc:"月售492单"
+            //     }
+            // ]
         }
     }
 }

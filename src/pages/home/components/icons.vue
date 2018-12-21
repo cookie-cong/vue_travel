@@ -1,8 +1,8 @@
 <template>
     <div class="icons">
-        <swiper>
+        <swiper :options="swiperOption">
             <swiper-slide v-for="(page,index) of pages" :key="index">
-                <div class="icon" v-for="item of page" :key="item.id">
+                <div class="icon" v-for="item of iconlist" :key="item.id">
                     <div class="icon-img">
                         
                             <img class="icon-img-content" :src="item.imgUrl"/>
@@ -75,57 +75,63 @@
 <script>
 export default {
     name:"HomeIcons",
+    props:{
+        iconlist:Array
+    },
     data(){
         return{
-            iconList:[
-                {
-                    id:"01",
-                    imgUrl:"//s.qunarzz.com/vacation_react/freetrip/jijiu.png",
-                    desc:"热门景点"
-                },
-                {
-                    id:"02",
-                    imgUrl:"//s.qunarzz.com/vacation_react/freetrip/visa.png",
-                    desc:"热门景点"
-                }, 
-                {
-                    id:"03",
-                    imgUrl:"//s.qunarzz.com/vacation_react/freetrip/jingjiu.png",
-                    desc:"热门景点"
-                },
-                {
-                    id:"04",
-                    imgUrl:"//s.qunarzz.com/vacation_react/freetrip/local.png",
-                    desc:"热门景点"
-                },
-                {
-                    id:"05",
-                    imgUrl:"//s.qunarzz.com/vacation_react/freetrip/ticket.png",
-                    desc:"热门景点"
-                },
-                {
-                    id:"06",
-                    imgUrl:"//s.qunarzz.com/vacation_react/freetrip/jijiu.png",
-                    desc:"热门景点"
-                },
-                {
-                    id:"07",
-                    imgUrl:"//s.qunarzz.com/vacation_react/freetrip/jijiu.png",
-                    desc:"热门景点"
-                },
-                {
-                    id:"08",
-                    imgUrl:"//s.qunarzz.com/vacation_react/freetrip/jijiu.png",
-                    desc:"热门景点"
-                }                     
+            swiperOption:{
+                autoplay:false
+            }
+            // iconList:[
+            //     {
+            //         id:"01",
+            //         imgUrl:"//s.qunarzz.com/vacation_react/freetrip/jijiu.png",
+            //         desc:"热门景点"
+            //     },
+            //     {
+            //         id:"02",
+            //         imgUrl:"//s.qunarzz.com/vacation_react/freetrip/visa.png",
+            //         desc:"热门景点"
+            //     }, 
+            //     {
+            //         id:"03",
+            //         imgUrl:"//s.qunarzz.com/vacation_react/freetrip/jingjiu.png",
+            //         desc:"热门景点"
+            //     },
+            //     {
+            //         id:"04",
+            //         imgUrl:"//s.qunarzz.com/vacation_react/freetrip/local.png",
+            //         desc:"热门景点"
+            //     },
+            //     {
+            //         id:"05",
+            //         imgUrl:"//s.qunarzz.com/vacation_react/freetrip/ticket.png",
+            //         desc:"热门景点"
+            //     },
+            //     {
+            //         id:"06",
+            //         imgUrl:"//s.qunarzz.com/vacation_react/freetrip/jijiu.png",
+            //         desc:"热门景点"
+            //     },
+            //     {
+            //         id:"07",
+            //         imgUrl:"//s.qunarzz.com/vacation_react/freetrip/jijiu.png",
+            //         desc:"热门景点"
+            //     },
+            //     {
+            //         id:"08",
+            //         imgUrl:"//s.qunarzz.com/vacation_react/freetrip/jijiu.png",
+            //         desc:"热门景点"
+            //     }                     
 
-            ]
+            // ]
         }
     },
     computed:{
         pages(){
             const pages = [];
-            this.iconList.forEach((item,index)=>{
+            this.iconlist.forEach((item,index)=>{
                 const page = Math.floor(index / 8);
                 if(!pages[page]){
                     pages[page]=[];
