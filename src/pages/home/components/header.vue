@@ -7,8 +7,9 @@
 			<div class="header_center" >
 				<i class="iconfont">&#xe60a;</i>
 				输入城市/游玩景点/主题</div>
-		<router-link to="../../City/City.vue">
-			<div class="header_right">北京
+		<router-link to="/city">
+			
+			<div class="header_right">{{this.city}}
 				<i class="iconfont arrow-icon">&#xe644;</i>
 			</div>
 		</router-link>
@@ -16,7 +17,10 @@
 </template>
 <script>
 export default {
-
+	name:"HomeHeader",
+	props:{
+		city:String
+	}
 }
 </script>
 
