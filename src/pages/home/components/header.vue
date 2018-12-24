@@ -7,11 +7,11 @@
 			<div class="header_center" >
 				<i class="iconfont">&#xe60a;</i>
 				输入城市/游玩景点/主题</div>
-
-			<div class="header_right">城市
+		<router-link to="../../City/City.vue">
+			<div class="header_right">北京
 				<i class="iconfont arrow-icon">&#xe644;</i>
 			</div>
-		
+		</router-link>
     </div>
 </template>
 <script>
@@ -50,6 +50,7 @@ export default {
 		width:1.24rem
 		float:right
 		text-align:center
+		color:#fff
 		.arrow-icon
 			margin-left:-.05rem
 			font-size:.18rem
