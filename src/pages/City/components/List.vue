@@ -12,13 +12,13 @@
       <div class="area">
         <div class="title border-topbottom">热门城市</div>
         <div class="currentCity">
-          <div class="current_wrap" v-for="item of hot" :key="item.id">
+          <div class="current_wrap" v-for="item of hot" :key="item.id" >
             <div class="current">{{item.name}}</div>
           </div>
         
         </div>
       </div>
-      <div class="area" v-for="(item,key) in cities" :key="key">
+      <div class="area" v-for="(item,key) in cities" :key="key" :ref="key">
         <div class="title border-topbottom">{{key}}</div>
         <div class="item-list">
           <div class="item border-bottom" v-for="citys in item" :key="citys.id">{{citys.name}}</div>
@@ -35,12 +35,21 @@ export default {
   name: "CityList",
   props:{
     cities:Object,
-    hot:Array
+    hot:Array,
+    letter:String
   },
   mounted(){
       this.scroll = new BScroll(this.$refs.wrapper)
-  }
-};
+  },
+  watch: {
+    letter () {
+      if (this.letter) {
+        const element = this.$refs[this.letter][0]
+        this.scroll.scrollToElement(element)
+      }
+    }
+  },
+}
 </script>
 <style lang="stylus" scoped>
 @import '~styles/common.styl';
