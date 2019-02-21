@@ -9,6 +9,7 @@ import 'styles/border.css'//解决一像素边框的方案
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import '../dist/css/swiper.css'
 import '../dist/js/swiper'
+import store from "./store"
 
 Vue.config.productionTip = false
 Vue.use(VueAwesomeSwiper)
@@ -16,6 +17,7 @@ Vue.use(VueAwesomeSwiper)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

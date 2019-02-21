@@ -8,7 +8,8 @@
                 <li class="search-item" 
                 border-bottom
                 v-for="(item,index) in list" 
-                :key="index">
+                :key="index"
+                @click="handleCityClick(item.name)">
                 {{item.name}}
                 </li>
                 <li class="search-item" border-bottom v-show="NoData">没有匹配的数据</li>
@@ -34,6 +35,13 @@ export default {
         NoData(){
             return !this.list.length //当搜索框里没有数据时显示
         }
+    },
+    methods:{
+      handleCityClick(data){
+      
+        this.$store.dispatch("handleCity",data);
+        this.$router.push("/")
+      }
     },
     watch:{
         keyword(){

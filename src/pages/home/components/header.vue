@@ -9,7 +9,7 @@
 				输入城市/游玩景点/主题</div>
 		<router-link to="/city">
 			
-			<div class="header_right">{{this.city}}
+			<div class="header_right">{{this.$store.state.cities}}
 				<i class="iconfont arrow-icon">&#xe644;</i>
 			</div>
 		</router-link>

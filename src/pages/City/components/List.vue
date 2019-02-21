@@ -5,23 +5,24 @@
         <div class="title border-topbottom">当前城市</div>
         <div class="currentCity">
           <div class="current_wrap">
-            <div class="current">北京</div>
+            <div class="current">{{this.$store.state.cities}}</div>
           </div>
         </div>
       </div>
       <div class="area">
         <div class="title border-topbottom">热门城市</div>
         <div class="currentCity">
-          <div class="current_wrap" v-for="item of hot" :key="item.id" >
+          <div class="current_wrap" v-for="item of hot" :key="item.id" 
+          @click="handleCityClick(item.name)">
             <div class="current">{{item.name}}</div>
           </div>
         
         </div>
       </div>
-      <div class="area" v-for="(item,key) in cities" :key="key" :ref="key">
+      <div class="area" v-for="(item,key) in cities" :key="key" :ref="key" >
         <div class="title border-topbottom">{{key}}</div>
         <div class="item-list">
-          <div class="item border-bottom" v-for="citys in item" :key="citys.id">{{citys.name}}</div>
+          <div class="item border-bottom" v-for="citys in item" :key="citys.id"  @click="handleCityClick(citys.name)">{{citys.name}}</div>
         
         </div>
 
@@ -39,8 +40,18 @@ export default {
     letter:String
   },
   mounted(){
-      this.scroll = new BScroll(this.$refs.wrapper)
+      this.scroll = new BScroll(this.$refs.wrapper,{
+        click:true
+      })
   },
+  methods:{
+    handleCityClick(data){
+      
+      this.$store.dispatch("handleCity",data);
+      this.$router.push("/")
+    }
+  },
+
   watch: {
     letter () {
       if (this.letter) {
@@ -48,7 +59,7 @@ export default {
         this.scroll.scrollToElement(element)
       }
     }
-  },
+  }
 }
 </script>
 <style lang="stylus" scoped>
